@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_navigation"
+    app:startDestination="@id/registrationFirst"
+    tools:ignore="UnusedNavigation">
+    <fragment
+        android:id="@+id/registrationFirst"
+        android:name="com.example.fasol.registration.RegistrationFirst"
+        android:label="fragment_reg"
+        tools:layout="@layout/fragment_reg" >
+        <action
+            android:id="@+id/action_registrationFirst_to_checkFragment"
+            app:destination="@id/checkFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkFragment"
+        android:name="com.example.fasol.registration.RegistrationSecond"
+        android:label="fragment_check"
+        tools:layout="@layout/fragment_data" />
+</navigation>
