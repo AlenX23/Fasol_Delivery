@@ -4,37 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8"
-    android:padding="8dp"
-    tools:context=".MainFragment"
     android:focusable="true"
-    android:saveEnabled="true">
+    android:orientation="vertical"
+    android:saveEnabled="true"
+    tools:context=".section.Main">
 
 
     <SearchView
         android:id="@+id/searchView"
-        style="@style/Widget.AppCompat.Light.SearchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/search_view"
+        android:gravity="end"
         android:queryHint="@string/search"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/Category_View"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="8dp"
-        android:clipToPadding="false"
         android:orientation="horizontal"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView"
         tools:listitem="@layout/category_card" />

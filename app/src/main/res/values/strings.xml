@@ -6,17 +6,18 @@
     <string name="orders">Заказы</string>
     <string name="profile">Профиль</string>
     <string name="sign_in">Вход</string>
+    <string name="sign_in2">Войти</string>
     <string name="sas">Заголовок</string>
     <string name="profile_data">Личные данные</string>
     <string name="prefix">"+7 "</string>
     <string name="tel_text">Регистрация</string>
     <string name="tel_text2">для оформления заказа и доставки</string>
 
-    <string name="next">Далее</string>
+    <string name="done">Готово</string>
 
     <string name="login">Логин</string>
     <string name="password">Пароль</string>
-    <string name="personal_data">Личные данные</string>
+
     <string name="name">Имя</string>
     <string name="number">Номер телефона</string>
     <string name="save">Сохранить</string>
@@ -26,4 +27,17 @@
     <string name="orders_auth">Перейдите в каталог, чтобы сделать первый заказ.</string>
     <string name="orders_auth_first">У вас пока нет заказов.</string>
     <string name="orders_auth1">В каталог</string>
+    <string name="register">Зарегистрироваться</string>
+
+    <string name="support">Служба поддержки</string>
+    <string name="information">Информация</string>
+    <string name="signOut">Выйти</string>
+    <string name="subcategory_title">Заголовок подкатегории</string>
+    <string name="subcategory">Подкатегория</string>
+    <string name="back">Назад</string>
+    <string name="category_title">Заголовок категории</string>
+    <string name="product_name">Наименование продукта</string>
+    <string name="product_price">Цена</string>
+    <string name="description">Описание</string>
+    <string name="add">Добавить</string>
 </resources>

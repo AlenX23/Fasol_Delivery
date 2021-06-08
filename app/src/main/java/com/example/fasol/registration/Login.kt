@@ -1,28 +1,24 @@
 package com.example.fasol.registration
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.fasol.Communicator
+import androidx.navigation.fragment.findNavController
 import com.example.fasol.R
+import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.registration.*
+import kotlinx.android.synthetic.main.registration.textView
+import kotlinx.android.synthetic.main.sign_in.*
 
-class Login : Fragment() {
-    private lateinit var communicator: Communicator
+class Login : Fragment(R.layout.fragment_login) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val v = inflater.inflate(R.layout.login_button, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        val button: Button = v.findViewById(R.id.login)
-        button.setOnClickListener {
-            communicator = this.activity as Communicator
-            communicator.passData(R.id.authorizationFragment, RegistrationFirst())
+
+        button_login.setOnClickListener {
+            val action = LoginDirections.actionLoginToSignIn()
+            findNavController().navigate(action)
         }
-        return v
     }
 }

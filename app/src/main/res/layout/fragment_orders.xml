@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8"
-    tools:context=".Orders">
+    tools:context=".section.Orders">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/ordersFragment"
+
+    <fragment
+        android:id="@+id/OrdersFragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="673dp"
-        android:background="#FFFFFF"
+        android:layout_height="match_parent"
+
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/orders_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_navigation"
+    app:startDestination="@id/login">
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.fasol.registration.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_signIn"
+            app:destination="@id/signIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/signIn"
+        android:name="com.example.fasol.registration.SignIn"
+        android:label="sign_in"
+        tools:layout="@layout/sign_in" >
+        <action
+            android:id="@+id/action_signIn_to_registration"
+            app:destination="@id/registration" />
+        <action
+            android:id="@+id/action_signIn_to_profileAuth"
+            app:destination="@id/profileAuth" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.example.fasol.registration.Registration"
+        android:label="registration"
+        tools:layout="@layout/registration" >
+        <action
+            android:id="@+id/action_registration_to_profileAuth"
+            app:destination="@id/profileAuth" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileAuth"
+        android:name="com.example.fasol.authorization.ProfileAuth"
+        android:label="profile"
+        tools:layout="@layout/profile" />
+</navigation>

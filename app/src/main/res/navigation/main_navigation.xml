@@ -3,21 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/mainFragment">
-
+    app:startDestination="@id/main">
+    <dialog
+        android:id="@+id/productInfo"
+        android:name="com.example.fasol.product.ProductInfo"
+        android:label="ProductInfo" />
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.fasol.MainFragment"
+        android:id="@+id/main"
+        android:name="com.example.fasol.section.Main"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main_to_subcategoriesFragment"
+            app:destination="@id/subcategoriesFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.fasol.Profile"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:id="@+id/subcategoriesFragment"
+        android:name="com.example.fasol.subcategories.SubcategoriesFragment"
+        android:label="fragment_subcategories"
+        tools:layout="@layout/fragment_subcategories" >
+        <action
+            android:id="@+id/action_subcategoriesFragment_to_products"
+            app:destination="@id/products" />
+    </fragment>
     <fragment
-        android:id="@+id/ordersFragment"
-        android:name="com.example.fasol.Orders"
-        android:label="fragment_orders"
-        tools:layout="@layout/fragment_orders" />
+        android:id="@+id/products"
+        android:name="com.example.fasol.product.Products"
+        android:label="fragment_products"
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/action_products_to_productInfo"
+            app:destination="@id/productInfo" />
+    </fragment>
 </navigation>

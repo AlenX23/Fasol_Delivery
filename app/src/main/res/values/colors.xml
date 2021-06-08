@@ -3,4 +3,7 @@
     <color name="colorPrimary">#1ABC00</color>
     <color name="colorBack">#ECEAEA</color>
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="search_view">#ECEAEA</color>
+    <color name="grey">#E0E0E0</color>
 </resources>
