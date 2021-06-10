@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.fasol.R
 import com.example.fasol.RetrofitClient
 import com.example.fasol.Subcategory
+import com.example.fasol.category.CategoryAdapter
 import kotlinx.android.synthetic.main.fragment_subcategories.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,7 +34,7 @@ class SubcategoriesFragment : Fragment(R.layout.fragment_subcategories) {
         Subcategories_View.setHasFixedSize(true)
         Subcategories_View.layoutManager = GridLayoutManager(requireContext().applicationContext, 2)
 
-        RetrofitClient.instance.getSubcategories().enqueue(object : Callback<List<Subcategory>> {
+        RetrofitClient.instance.getSubcategories(id).enqueue(object : Callback<List<Subcategory>> {
 
             override fun onResponse(
                 call: Call<List<Subcategory>>,

@@ -40,4 +40,6 @@
     <string name="product_price">Цена</string>
     <string name="description">Описание</string>
     <string name="add">Добавить</string>
+    <string name="basket">Корзина</string>
+    <string name="sum">сумма</string>
 </resources>

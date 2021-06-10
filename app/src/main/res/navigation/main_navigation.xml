@@ -4,10 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
     app:startDestination="@id/main">
-    <dialog
-        android:id="@+id/productInfo"
-        android:name="com.example.fasol.product.ProductInfo"
-        android:label="ProductInfo" />
+
     <fragment
         android:id="@+id/main"
         android:name="com.example.fasol.section.Main"
@@ -16,6 +13,9 @@
         <action
             android:id="@+id/action_main_to_subcategoriesFragment"
             app:destination="@id/subcategoriesFragment" />
+        <argument
+            android:name="category_id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/subcategoriesFragment"
@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_subcategoriesFragment_to_products"
             app:destination="@id/products" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/products"
@@ -35,4 +38,9 @@
             android:id="@+id/action_products_to_productInfo"
             app:destination="@id/productInfo" />
     </fragment>
+
+    <dialog
+        android:id="@+id/productInfo"
+        android:name="com.example.fasol.product.ProductInfo"
+        android:label="ProductInfo" />
 </navigation>

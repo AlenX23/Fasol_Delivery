@@ -11,9 +11,6 @@ import kotlinx.android.synthetic.main.registration.*
 import kotlinx.android.synthetic.main.sign_in.*
 
 class SignIn : Fragment(R.layout.sign_in) {
-
-    //private val args: SignInArgs by navArgs()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -26,7 +23,5 @@ class SignIn : Fragment(R.layout.sign_in) {
             val action = SignInDirections.actionSignInToRegistration()
             findNavController().navigate(action)
         }
-
-
     }
 }

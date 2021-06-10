@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/product_card"
+    android:id="@+id/basket_widget"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="start"
+    android:layout_height="65dp"
+    android:background="@drawable/basket_widget"
     android:orientation="horizontal">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/grey" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp">
+        android:paddingHorizontal="20dp">
 
         <TextView
-            android:id="@+id/Subcategory_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="@string/subcategory_title"
-            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:text="@string/basket"
+            android:textColor="@color/white"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+
+        <TextView
+            android:id="@+id/basket_widget_sum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:contentDescription="@string/subcategory"
-            android:src="@drawable/chevron_right_24"
+            android:layout_gravity="center"
+            android:text="@string/sum"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</LinearLayout>

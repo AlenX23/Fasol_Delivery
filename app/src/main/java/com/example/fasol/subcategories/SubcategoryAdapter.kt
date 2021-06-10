@@ -6,8 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fasol.R
 import com.example.fasol.Subcategory
-import kotlinx.android.synthetic.main.category_card.view.*
-import kotlinx.android.synthetic.main.category_card.view.Category_Title
 import kotlinx.android.synthetic.main.fragment_subcategories.view.*
 import kotlinx.android.synthetic.main.subcategory_card.view.*
 
@@ -19,7 +17,7 @@ class SubcategoryAdapter(private val list: ArrayList<Subcategory>) :
     ) : RecyclerView.ViewHolder(itemView) {
         fun bind(subcategory: Subcategory) {
             with(itemView) {
-                Category_Title.text = subcategory.category
+                Category_title.text = subcategory.category
                 Subcategory_Title.text = subcategory.name
             }
         }

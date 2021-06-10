@@ -38,5 +38,10 @@
         android:id="@+id/ordersEmpty"
         android:name="com.example.fasol.authorization.OrdersEmpty"
         android:label="orders_empty"
-        tools:layout="@layout/orders_empty" />
+        tools:layout="@layout/orders_empty" >
+        <action
+            android:id="@+id/action_ordersEmpty_to_main_navigation"
+            app:destination="@id/main_navigation" />
+    </fragment>
+    <include app:graph="@navigation/main_navigation" />
 </navigation>

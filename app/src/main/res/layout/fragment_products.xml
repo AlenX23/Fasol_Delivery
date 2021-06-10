@@ -10,6 +10,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,19 +19,24 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
+            android:layout_height="wrap_content"
             android:contentDescription="@string/back"
-            android:src="@drawable/chevron_left_24" />
+            android:src="@drawable/chevron_left_24"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <SearchView
             android:id="@+id/searchView"
             style="@style/Widget.AppCompat.Light.SearchView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/search_view"
-            android:queryHint="@string/search" />
+            android:queryHint="@string/search"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
 
     <LinearLayout
@@ -46,9 +52,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="10dp"
             android:text="@string/subcategory_title"
-            android:textSize="25sp" />
+            android:textSize="26sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/products_view"
