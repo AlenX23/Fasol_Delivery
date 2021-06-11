@@ -1,20 +1,17 @@
 package com.example.fasol
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 
-class MainFragment : Fragment() {
-    private lateinit var communicator: Communicator
-
+class make_oreder : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val v = inflater.inflate(R.layout.fragment_main, container, false)
-
-        return v
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_make_oreder, container, false)
     }
 }

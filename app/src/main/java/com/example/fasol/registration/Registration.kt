@@ -65,7 +65,7 @@ class Registration : Fragment(R.layout.registration) {
                     }
                     else if(response.code() == 400)
                     {
-                        Toast.makeText(context, "Аккаунт с таким номером уже сущкесвуте!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Аккаунт с таким номером уже существует!", Toast.LENGTH_SHORT).show()
                     }
                     else
                     {

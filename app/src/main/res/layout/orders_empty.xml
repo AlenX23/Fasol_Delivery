@@ -37,7 +37,7 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/reg_next"
+            android:id="@+id/button_go_main"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:background="@drawable/custom_button"

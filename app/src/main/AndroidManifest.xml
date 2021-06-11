@@ -20,8 +20,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".section.Profile"></activity>
-        <activity android:name=".section.Orders" />
+        <activity android:name=".section.Profile"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".section.Orders"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">

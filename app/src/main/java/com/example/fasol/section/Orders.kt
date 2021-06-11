@@ -17,13 +17,6 @@ class Orders : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        if(ProfileManager.isUserExist())
-        {
-            // Тут почему то крашит на фрагменте с заказами, хз почему
-            findNavController().navigate(R.id.profileAuth)
-        }
-
         return inflater.inflate(R.layout.fragment_orders, container, false)
     }
 
