@@ -42,4 +42,12 @@
     <string name="add">Добавить</string>
     <string name="basket">Корзина</string>
     <string name="sum">сумма</string>
+    <string name="close">Закрыть</string>
+    <string name="delete_basket">Очистить корзину</string>
+
+    <string name="product_image">Изображение продукта</string>
+    <string name="count">Кол шт</string>
+    <string name="arrange">Оформить заказ</string>
+    <string name="remove">Убрать</string>
+    <string name="token_update">Обновить токен</string>
 </resources>

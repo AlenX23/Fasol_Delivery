@@ -8,8 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.fasol.R
 import com.example.fasol.RetrofitClient
-import com.example.fasol.Subcategory
-import com.example.fasol.category.CategoryAdapter
+import com.example.fasol.SubcategoryModel
 import kotlinx.android.synthetic.main.fragment_subcategories.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,25 +27,26 @@ class SubcategoriesFragment : Fragment(R.layout.fragment_subcategories) {
     }
 
     private fun subcategoryView() {
-        val list = ArrayList<Subcategory>()
+        val list = ArrayList<SubcategoryModel>()
         val adapter = SubcategoryAdapter(list)
 
         Subcategories_View.setHasFixedSize(true)
         Subcategories_View.layoutManager = GridLayoutManager(requireContext().applicationContext, 2)
 
-        RetrofitClient.instance.getSubcategories(id).enqueue(object : Callback<List<Subcategory>> {
+        /*RetrofitClient.instance.getSubcategories()
+            .enqueue(object : Call<ArrayList<SubcategoryModel>>,
+                Callback<List<SubcategoryModel>> {
+                override fun onResponse(
+                    call: Call<List<SubcategoryModel>>,
+                    response: Response<List<SubcategoryModel>>
+                ) {
+                    /*response.body()!!.let { list.addAll(it) }
+                    Subcategories_View.adapter = adapter*/
+                }
 
-            override fun onResponse(
-                call: Call<List<Subcategory>>,
-                response: Response<List<Subcategory>>
-            ) {
-                response.body()!!.let { list.addAll(it) }
-
-                Subcategories_View.adapter = adapter
-            }
-
-            override fun onFailure(call: Call<List<Subcategory>>, t: Throwable) {
-            }
-        })
+                override fun onFailure(call: Call<List<SubcategoryModel>>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+            })*/
     }
 }
