@@ -1,6 +1,7 @@
 package com.example.fasol.authorization
 
 import TokenManager
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,20 +10,24 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import com.example.fasol.*
+import kotlinx.android.synthetic.main.orders_empty.*
+import kotlinx.android.synthetic.main.profile.*
 import kotlinx.serialization.ImplicitReflectionSerializer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class ProfileAuth : Fragment(R.layout.profile) {
-
     lateinit var name: TextView
     lateinit var phone: TextView
     lateinit var signOut: Button
     lateinit var updateToken: Button
 
+    @SuppressLint("SetTextI18n")
     @ImplicitReflectionSerializer
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,7 +47,7 @@ class ProfileAuth : Fragment(R.layout.profile) {
 
         signOut.setOnClickListener {
             ProfileManager.Clear()
-            findNavController().navigate(R.id.signIn)
+            findNavController().navigate(R.id.login)
         }
 
         updateToken.setOnClickListener {
@@ -75,5 +80,10 @@ class ProfileAuth : Fragment(R.layout.profile) {
         }
 
         return v
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 }

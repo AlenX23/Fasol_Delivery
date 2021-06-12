@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/product_info"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/info"
+    android:orientation="vertical"
+    tools:context=".product.ProductInfo">
 
     <ImageView
         android:id="@+id/product_image"

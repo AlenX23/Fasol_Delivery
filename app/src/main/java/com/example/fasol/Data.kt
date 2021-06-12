@@ -13,7 +13,7 @@ data class Category(
 
 data class Subcategory(
     val id: Int,
-    val category: String,
+    val category: Int,
     val name: String
 )
 

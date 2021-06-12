@@ -12,11 +12,8 @@ class OrdersEmpty : Fragment(R.layout.orders_empty) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(ProfileManager.isUserExist())
-        {
-            // Тут почему то крашит на фрагменте с заказами, хз почему
-            findNavController().navigate(R.id.profileAuth)
-        }else{}
+        if (!ProfileManager.isUserExist())
+            findNavController().navigate(R.id.profile_navigation)
 
         button_go_main.setOnClickListener {
             val action = OrdersEmptyDirections.actionOrdersEmptyToMainNavigation()

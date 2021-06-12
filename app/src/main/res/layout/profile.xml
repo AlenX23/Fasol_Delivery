@@ -37,7 +37,7 @@
             android:id="@+id/number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="125dp"
+            android:layout_marginBottom="100dp"
             android:text="@string/number"
             android:textSize="20sp"
 
@@ -48,7 +48,7 @@
 
 
         <Button
-            android:id="@+id/support"
+            android:id="@+id/button_support"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -56,10 +56,10 @@
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <Button
-            android:id="@+id/information"
+            android:id="@+id/button_information"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,7 +67,18 @@
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_privacy_policy"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/signOut"
@@ -78,7 +89,7 @@
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/updateToken"
@@ -88,8 +99,8 @@
             android:text="@string/token_update"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

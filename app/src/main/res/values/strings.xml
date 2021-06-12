@@ -50,4 +50,6 @@
     <string name="arrange">Оформить заказ</string>
     <string name="remove">Убрать</string>
     <string name="token_update">Обновить токен</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="info_title">Заголовок раздела</string>
 </resources>

@@ -55,11 +55,5 @@ class Main : Fragment(R.layout.fragment_main), CategoryAdapter.OnItemClickListen
     }
 
     override fun onItemClick(position: Int) {
-        /*val action = MainDirections.actionMainToSubcategoriesFragment(list[position].id)
-        findNavController().navigate(action)
-
-        Toast.makeText(context, list[id].id, Toast.LENGTH_LONG).show()*/
-
-        //makeText(this, list[id].id, Toast.LENGTH_LONG).show()
     }
 }
