@@ -65,23 +65,34 @@ data class User(
  */
 
 data class Basket(
-    @SerializedName("id") var id: Int,
-    @SerializedName("products") var products: ArrayList<BasketProduct>,
-    @SerializedName("total_products") var total_products: Int,
-    @SerializedName("total_price") var total_price: String,
-    @SerializedName("in_order") var in_order: Boolean,
-    @SerializedName("owner") var owner: Int
+    @SerializedName("id") var id : Int,
+    @SerializedName("products") var products : List<Products>,
+    @SerializedName("total_products") var totalProducts : Int,
+    @SerializedName("total_price") var totalPrice : String,
+    @SerializedName("in_order") var inOrder : Boolean,
+    @SerializedName("owner") var owner : Int
 )
 
-data class BasketProduct(
-    @SerializedName("id") var id: Int,
-    @SerializedName("product") var products: String,
-    @SerializedName("quantity") var quantity: Int,
-    @SerializedName("total_price") var total_price: String
+data class Product (
+    @SerializedName("id") var id : Int,
+    @SerializedName("subcategory") var subcategory : String,
+    @SerializedName("name") var name : String,
+    @SerializedName("representation") var representation : String,
+    @SerializedName("weight") var weight : String,
+    @SerializedName("composition") var composition : String,
+    @SerializedName("price") var price : String,
+    @SerializedName("in_stock") var inStock : Boolean
+)
+
+data class Products (
+    @SerializedName("id") var id : Int,
+    @SerializedName("product") var product : Product,
+    @SerializedName("quantity") var quantity : Int,
+    @SerializedName("total_price") var totalPrice : String
 )
 
 data class AddToBasketModel(
-    @SerializedName("id") var id: Int,
+    @SerializedName("id") var id: Int
 )
 
 // action - операция производимаяя с количеством (addition - увуличение, subtraction - уменьшение)
@@ -146,7 +157,7 @@ data class OneProduct (
     Заказы
  */
 
-data class Order(
+data class OrderModel(
     @SerializedName("id") var id: Int,
     @SerializedName("status") var status: String,
     @SerializedName("basket") var basket: Basket,
@@ -157,4 +168,13 @@ data class Order(
     @SerializedName("comment") var comment: String,
     @SerializedName("order_date") var order_date: String,
     @SerializedName("customer") var customer: Int
+)
+
+data class CreateOrderModel (
+    @SerializedName("first_name") var firstName : String,
+    @SerializedName("last_name") var lastName : String,
+    @SerializedName("phone") var phone : String,
+    @SerializedName("address") var address : String,
+    @SerializedName("buying_type") var buyingType : String,
+    @SerializedName("comment") var comment : String
 )

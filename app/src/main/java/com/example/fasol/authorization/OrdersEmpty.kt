@@ -16,7 +16,7 @@ class OrdersEmpty : Fragment(R.layout.orders_empty) {
             findNavController().navigate(R.id.profile_navigation)
 
         button_go_main.setOnClickListener {
-            findNavController().navigate(R.id.main)
+            findNavController().navigate(R.id.main_navigation)
         }
     }
 }

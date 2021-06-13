@@ -2,8 +2,10 @@ package com.example.fasol.product
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.TouchDelegate
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -14,12 +16,13 @@ import com.example.fasol.ProductFromAll
 import com.example.fasol.ProductsModel
 import com.example.fasol.R
 import com.example.fasol.RetrofitClient
+import kotlinx.android.synthetic.main.basket_widget.*
 import kotlinx.android.synthetic.main.fragment_products.*
+import kotlinx.android.synthetic.main.product_info.*
 import retrofit2.Call
 import retrofit2.Response
 
 class Products : Fragment(R.layout.fragment_products) {
-
     private lateinit var title: TextView
     private lateinit var recycle: RecyclerView
 
@@ -32,6 +35,7 @@ class Products : Fragment(R.layout.fragment_products) {
 
         title = v.findViewById(R.id.subcategory_Title)
         recycle = v.findViewById(R.id.products_view)
+
 
         if (arguments != null) {
             val bundle = requireArguments()
@@ -75,9 +79,13 @@ class Products : Fragment(R.layout.fragment_products) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
         button_product_back.setOnClickListener {
             val action = ProductsDirections.actionProductsToSubcategoriesFragment(this.id)
             findNavController().navigate(action)
         }
+
+
     }
 }

@@ -33,10 +33,10 @@ interface Api {
     @Headers("Content-Type: application/json")
     fun updateAccessToken(@Body body: RefreshModel): Call<TokenResponce>
 
-    @GET("api//basket/")
+    @GET("api/basket/")
     fun getBasket(@Header("Authorization") Authorization: String): Call<Basket>
 
-    @POST("api//basket/")
+    @POST("api/basket/add-to-basket/")
     @Headers("Content-Type: application/json")
     fun addToBasket(
         @Header("Authorization") Authorization: String,
@@ -66,5 +66,8 @@ interface Api {
     fun getOneProduct(@Path("id") productId: Int): Call<OneProduct>
 
     @GET("api/orders/")
-    fun getOrders(@Header("Authorization") Authorization: String): Call<List<Order>>
+    fun getOrders(@Header("Authorization") Authorization: String): Call<List<OrderModel>>
+
+    @GET("api/orders/order-create/")
+    fun createOrder(@Header("Authorization") Authorization: String, @Body createOrder:CreateOrderModel): Call<CreateOrderModel>
 }

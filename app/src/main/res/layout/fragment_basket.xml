@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".basket.basket">
+    tools:context=".basket.Basket">
 
 
     <LinearLayout
@@ -52,7 +52,7 @@
         android:layout_height="0dp"
         android:orientation="vertical"
 
-        app:layout_constraintBottom_toTopOf="@+id/materialButton"
+        app:layout_constraintBottom_toTopOf="@+id/orderBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
@@ -66,7 +66,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/Subcategories_View"
+            android:id="@+id/basketitems_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -81,8 +81,19 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/totalPrice"
+        android:background="@color/white"
+        android:layout_margin="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sum"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
+        android:id="@+id/orderBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -53,4 +53,19 @@
     <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="info_title">Заголовок раздела</string>
     <string name="product_info_condition">Авторизуйтесь, чтобы добавить продукт в корзину</string>
+    <string name="make_order">Оформление заказа</string>
+    <string name="delivery_address">Адрес доставки</string>
+    <string name="comment">Комментарий к заказу</string>
+    <string name="delivery_method">Способ доставки</string>
+    <string name="self">Самовывоз</string>
+    <string name="address">По адресу</string>
+    <string name="confirm_order">Подтвердить заказ</string>
+    <string name="order_number">Номер заказа:</string>
+    <string name="example_order_number">210213-073722</string>
+    <string name="order_date">Дата заказа:</string>
+    <string name="example_order_date">13.02.2021</string>
+    <string name="order_address">Адрес доставки:</string>
+    <string name="example_order_address">ул. Тургеневская, 10/6</string>
+    <string name="order_amount">Сумма:</string>
+    <string name="example_order_amount">3301 ₽</string>
 </resources>

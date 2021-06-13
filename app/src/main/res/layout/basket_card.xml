@@ -38,7 +38,7 @@
             android:padding="10dp">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/item_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/product_name"
@@ -52,10 +52,10 @@
                 android:layout_height="wrap_content"
                 android:text="@string/product_price"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+                app:layout_constraintTop_toBottomOf="@+id/item_name"/>
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/substractBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -73,11 +73,12 @@
                 android:text="@string/count"
                 android:layout_marginTop="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageButton2"
+                app:layout_constraintStart_toEndOf="@+id/substractBtn"
                 app:layout_constraintTop_toBottomOf="@+id/textView5"
                 android:layout_marginHorizontal="10dp"/>
 
             <ImageButton
+                android:id="@+id/additionBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
