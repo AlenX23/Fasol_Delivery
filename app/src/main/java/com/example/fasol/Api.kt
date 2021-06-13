@@ -7,9 +7,6 @@ interface Api {
     @GET("api/categories/")
     fun getCategory(): Call<List<Category>>
 
-    @GET("api/subcategories/")
-    fun getSubcategories(): Call<List<Subcategory>>
-
     //@kotlinx.serialization.ImplicitReflectionSerializer
     @POST("api/token/")
     @Headers("Content-Type: application/json")
@@ -63,8 +60,11 @@ interface Api {
     fun getSubcategories(@Query("category") category: Int): Call<List<SubcategoryModel>>
 
     @GET("api/products/")
-    fun getProducts(@Query("ordering") subCategoryId: Int): Call<ProductsModel>
+    fun getProducts(@Query("search") subCategoryName: String): Call<ProductsModel>
+
+    @GET("api/products/{id}")
+    fun getOneProduct(@Path("id") productId: Int): Call<OneProduct>
 
     @GET("api/orders/")
-    fun getProducts(@Header("Authorization") Authorization: String): Call<List<Order>>
+    fun getOrders(@Header("Authorization") Authorization: String): Call<List<Order>>
 }

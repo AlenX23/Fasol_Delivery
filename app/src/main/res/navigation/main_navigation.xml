@@ -28,6 +28,9 @@
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_subcategoriesFragment_to_main"
+            app:destination="@id/main" />
     </fragment>
     <fragment
         android:id="@+id/products"
@@ -37,6 +40,9 @@
         <action
             android:id="@+id/action_products_to_productInfo"
             app:destination="@id/productInfo" />
+        <action
+            android:id="@+id/action_products_to_subcategoriesFragment"
+            app:destination="@id/subcategoriesFragment" />
     </fragment>
 
     <dialog

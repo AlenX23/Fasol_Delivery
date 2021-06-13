@@ -18,8 +18,7 @@ class Login : Fragment(R.layout.fragment_login) {
 
 
         button_login.setOnClickListener {
-            val action = LoginDirections.actionLoginToSignIn()
-            findNavController().navigate(action)
+            findNavController().navigate(R.id.signIn)
         }
     }
 }

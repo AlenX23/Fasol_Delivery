@@ -11,12 +11,6 @@ data class Category(
     val representation: String
 )
 
-data class Subcategory(
-    val id: Int,
-    val category: Int,
-    val name: String
-)
-
 data class PhonePasswordModel(
     val phone: String,
     val password: String
@@ -113,7 +107,7 @@ data class SubcategoryModel(
 data class ProductsModel(
     @SerializedName("links") var links: Links,
     @SerializedName("total") var total: Int,
-    @SerializedName("results") var results: List<OneProduct>
+    @SerializedName("results") var results: List<ProductFromAll>
 )
 
 data class Links(
@@ -123,7 +117,7 @@ data class Links(
 
 )
 
-data class OneProduct(
+data class ProductFromAll(
     @SerializedName("id") var id: Int,
     @SerializedName("subcategory") var subcategory: String,
     @SerializedName("name") var name: String,
@@ -132,6 +126,20 @@ data class OneProduct(
     @SerializedName("composition") var composition: String,
     @SerializedName("price") var price: String,
     @SerializedName("in_stock") var inStock: Boolean
+)
+
+data class OneProduct (
+
+    @SerializedName("id") var id : Int,
+    @SerializedName("subcategory") var subcategory : SubcategoryModel,
+    @SerializedName("name") var name : String,
+    @SerializedName("description") var description : String,
+    @SerializedName("representation") var representation : String,
+    @SerializedName("weight") var weight : String,
+    @SerializedName("composition") var composition : String,
+    @SerializedName("price") var price : String,
+    @SerializedName("in_stock") var inStock : Boolean
+
 )
 
 /*

@@ -10,12 +10,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import com.example.fasol.*
-import kotlinx.android.synthetic.main.orders_empty.*
-import kotlinx.android.synthetic.main.profile.*
 import kotlinx.serialization.ImplicitReflectionSerializer
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,6 +31,7 @@ class ProfileAuth : Fragment(R.layout.profile) {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.profile, container, false)
+
 
         name = v.findViewById(R.id.name)
         phone = v.findViewById(R.id.number)
@@ -78,10 +75,8 @@ class ProfileAuth : Fragment(R.layout.profile) {
                     }
                 })
         }
-
         return v
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -52,4 +52,5 @@
     <string name="token_update">Обновить токен</string>
     <string name="privacy_policy">Политика конфиденциальности</string>
     <string name="info_title">Заголовок раздела</string>
+    <string name="product_info_condition">Авторизуйтесь, чтобы добавить продукт в корзину</string>
 </resources>
