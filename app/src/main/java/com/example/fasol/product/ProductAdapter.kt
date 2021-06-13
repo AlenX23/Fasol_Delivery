@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fasol.OneProduct
-import com.example.fasol.ProductFromAll
-import com.example.fasol.R
-import com.example.fasol.RetrofitClient
+import com.example.fasol.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_card.product_image
 import kotlinx.android.synthetic.main.product_card.product_name
@@ -29,7 +26,6 @@ class ProductAdapter(
     inner class ProductViewHolder(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
-
         private var productId: Int = 0
 
         private lateinit var productInfo: ProductFromAll
@@ -66,6 +62,10 @@ class ProductAdapter(
                                 info.product_name.text = response.body()!!.name
                                 info.product_price.text = "Цена: " + response.body()!!.price + " ₽"
                                 info.product_description.text = response.body()!!.description
+
+                                info.button_add.setOnClickListener {
+                                    clickBehavior(info)
+                                }
                             } else {
                                 Toast.makeText(
                                     it.context,
@@ -81,6 +81,41 @@ class ProductAdapter(
 
                     })
             }
+        }
+
+        private fun clickBehavior(info:ProductInfo)
+        {
+            RetrofitClient.instance.addToBasket("Bearer " + TokenManager.AccessToken, AddToBasketModel(productId))
+                .enqueue(object : retrofit2.Callback<AddToBasketModel> {
+                    override fun onResponse(
+                        call: Call<AddToBasketModel>,
+                        response: Response<AddToBasketModel>
+                    ) {
+                        if(response.code() == 201)
+                        {
+                            info.dismiss()
+                            Toast.makeText(itemView.context, "Товар успешно добавлен!", Toast.LENGTH_LONG)
+                        }
+                        else if(response.code() == 200)
+                        {
+                            info.dismiss()
+                            Toast.makeText(itemView.context, "Продукт уже есть в корзине!", Toast.LENGTH_LONG)
+                        }
+                        else
+                            Toast.makeText(
+                                itemView.context,
+                                "Что-то пошло не так! ${response.code()} ${response.body()}",
+                                Toast.LENGTH_SHORT
+                            )
+                    }
+
+                    override fun onFailure(
+                        call: Call<AddToBasketModel>,
+                        t: Throwable
+                    ) {
+                        Toast.makeText(itemView.context, "Что-то пошло не так!", Toast.LENGTH_SHORT)
+                    }
+                })
         }
     }
 
