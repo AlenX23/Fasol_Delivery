@@ -41,6 +41,7 @@ data class TokenResponce(
 
 data class UserWithoutId(
     @SerializedName("phone") var phone: String,
+    @SerializedName("password") var password: String,
     @SerializedName("first_name") var firstName: String,
     @SerializedName("last_name") var lastName: String,
     @SerializedName("address") var address: String
@@ -48,7 +49,6 @@ data class UserWithoutId(
 
 //@Serializable
 data class User(
-
     @SerializedName("id") var id: Int,
     @SerializedName("phone") var phone: String,
     @SerializedName("first_name") var firstName: String,
@@ -65,30 +65,30 @@ data class User(
  */
 
 data class Basket(
-    @SerializedName("id") var id : Int,
-    @SerializedName("products") var products : List<Products>,
-    @SerializedName("total_products") var totalProducts : Int,
-    @SerializedName("total_price") var totalPrice : String,
-    @SerializedName("in_order") var inOrder : Boolean,
-    @SerializedName("owner") var owner : Int
+    @SerializedName("id") var id: Int,
+    @SerializedName("products") var products: List<Products>,
+    @SerializedName("total_products") var totalProducts: Int,
+    @SerializedName("total_price") var totalPrice: String,
+    @SerializedName("in_order") var inOrder: Boolean,
+    @SerializedName("owner") var owner: Int
 )
 
-data class Product (
-    @SerializedName("id") var id : Int,
-    @SerializedName("subcategory") var subcategory : String,
-    @SerializedName("name") var name : String,
-    @SerializedName("representation") var representation : String,
-    @SerializedName("weight") var weight : String,
-    @SerializedName("composition") var composition : String,
-    @SerializedName("price") var price : String,
-    @SerializedName("in_stock") var inStock : Boolean
+data class Product(
+    @SerializedName("id") var id: Int,
+    @SerializedName("subcategory") var subcategory: String,
+    @SerializedName("name") var name: String,
+    @SerializedName("representation") var representation: String,
+    @SerializedName("weight") var weight: String,
+    @SerializedName("composition") var composition: String,
+    @SerializedName("price") var price: String,
+    @SerializedName("in_stock") var inStock: Boolean
 )
 
-data class Products (
-    @SerializedName("id") var id : Int,
-    @SerializedName("product") var product : Product,
-    @SerializedName("quantity") var quantity : Int,
-    @SerializedName("total_price") var totalPrice : String
+data class Products(
+    @SerializedName("id") var id: Int,
+    @SerializedName("product") var product: Product,
+    @SerializedName("quantity") var quantity: Int,
+    @SerializedName("total_price") var totalPrice: String
 )
 
 data class AddToBasketModel(
@@ -139,17 +139,17 @@ data class ProductFromAll(
     @SerializedName("in_stock") var inStock: Boolean
 )
 
-data class OneProduct (
+data class OneProduct(
 
-    @SerializedName("id") var id : Int,
-    @SerializedName("subcategory") var subcategory : SubcategoryModel,
-    @SerializedName("name") var name : String,
-    @SerializedName("description") var description : String,
-    @SerializedName("representation") var representation : String,
-    @SerializedName("weight") var weight : String,
-    @SerializedName("composition") var composition : String,
-    @SerializedName("price") var price : String,
-    @SerializedName("in_stock") var inStock : Boolean
+    @SerializedName("id") var id: Int,
+    @SerializedName("subcategory") var subcategory: SubcategoryModel,
+    @SerializedName("name") var name: String,
+    @SerializedName("description") var description: String,
+    @SerializedName("representation") var representation: String,
+    @SerializedName("weight") var weight: String,
+    @SerializedName("composition") var composition: String,
+    @SerializedName("price") var price: String,
+    @SerializedName("in_stock") var inStock: Boolean
 
 )
 
@@ -170,11 +170,21 @@ data class OrderModel(
     @SerializedName("customer") var customer: Int
 )
 
-data class CreateOrderModel (
-    @SerializedName("first_name") var firstName : String,
-    @SerializedName("last_name") var lastName : String,
-    @SerializedName("phone") var phone : String,
-    @SerializedName("address") var address : String,
-    @SerializedName("buying_type") var buyingType : String,
-    @SerializedName("comment") var comment : String
+data class CreateOrderModel(
+    @SerializedName("first_name") var firstName: String,
+    @SerializedName("last_name") var lastName: String,
+    @SerializedName("phone") var phone: String,
+    @SerializedName("address") var address: String,
+    @SerializedName("buying_type") var buyingType: String,
+    @SerializedName("comment") var comment: String
+)
+
+data class ChangeOrderModel(
+    @SerializedName("status") var status: String,
+)
+
+
+data class OneBasketInOrder(
+    val name: String,
+    val moreInfo: String
 )

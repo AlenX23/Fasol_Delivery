@@ -54,4 +54,9 @@
         android:name="com.example.fasol.basket.Basket"
         android:label="fragment_basket"
         tools:layout="@layout/fragment_basket" />
+    <fragment
+        android:id="@+id/make_Order"
+        android:name="com.example.fasol.basket.Make_Order"
+        android:label="fragment_make_order"
+        tools:layout="@layout/fragment_make_order" />
 </navigation>

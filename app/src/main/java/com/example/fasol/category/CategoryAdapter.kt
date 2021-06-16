@@ -1,5 +1,6 @@
 package com.example.fasol.category
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,7 +29,8 @@ class CategoryAdapter(
                 categoryId = category.id
                 categoryName = category.name
                 Category_Title.text = category.name
-                Picasso.with(context).load(category.representation).fit().into(Category_Image)
+                val url = Uri.decode(category.representation)
+                Picasso.with(context).load(url).fit().into(Category_Image)
             }
         }
 

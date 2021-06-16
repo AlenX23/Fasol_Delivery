@@ -7,12 +7,10 @@ interface Api {
     @GET("api/categories/")
     fun getCategory(): Call<List<Category>>
 
-    //@kotlinx.serialization.ImplicitReflectionSerializer
     @POST("api/token/")
     @Headers("Content-Type: application/json")
     fun getToken(@Body body: PhonePasswordModel): Call<TokenResponce>
 
-    //@kotlinx.serialization.ImplicitReflectionSerializer
     @POST("api/account/register/")
     @Headers("Content-Type: application/json")
     fun registerUser(@Body body: PhonePasswordModel): Call<RegisterUserResponce>
@@ -28,7 +26,6 @@ interface Api {
     @Headers("Content-Type: application/json")
     fun getUser(@Header("Authorization") Authorization: String): Call<User>
 
-    //@kotlinx.serialization.ImplicitReflectionSerializer
     @POST("api/token/refresh/")
     @Headers("Content-Type: application/json")
     fun updateAccessToken(@Body body: RefreshModel): Call<TokenResponce>
@@ -62,12 +59,31 @@ interface Api {
     @GET("api/products/")
     fun getProducts(@Query("search") subCategoryName: String): Call<ProductsModel>
 
+    @GET("api/products/")
+    fun getProductsAnswer(@Query("search") subCategoryName: String): Call<ProductsModel>
+
     @GET("api/products/{id}")
     fun getOneProduct(@Path("id") productId: Int): Call<OneProduct>
 
     @GET("api/orders/")
     fun getOrders(@Header("Authorization") Authorization: String): Call<List<OrderModel>>
 
-    @GET("api/orders/order-create/")
-    fun createOrder(@Header("Authorization") Authorization: String, @Body createOrder:CreateOrderModel): Call<CreateOrderModel>
+    @POST("api/orders/order-create/")
+    fun createOrder(
+        @Header("Authorization") Authorization: String,
+        @Body createOrder: CreateOrderModel
+    ): Call<CreateOrderModel>
+
+    @DELETE("api/orders/{id}")
+    fun removeOrder(
+        @Header("Authorization") Authorization: String,
+        @Path("id") id: Long
+    ): Call<Void>
+
+    @PATCH("api/orders/{id}")
+    fun changeStatusOrder(
+        @Header("Authorization") Authorization: String,
+        @Body body: ChangeOrderModel,
+        @Path("id") id: Long
+    ): Call<ChangeOrderModel>
 }

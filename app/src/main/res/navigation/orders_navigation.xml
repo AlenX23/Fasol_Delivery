@@ -14,4 +14,10 @@
             app:destination="@id/main_navigation" />
     </fragment>
     <include app:graph="@navigation/main_navigation" />
+
+    <fragment
+        android:id="@+id/orders_list"
+        android:name="com.example.fasol.authorization.orders_list"
+        android:label="fragment_orders_list"
+        tools:layout="@layout/fragment_orders_list" />
 </navigation>

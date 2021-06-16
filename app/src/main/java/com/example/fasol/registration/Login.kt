@@ -16,7 +16,6 @@ class Login : Fragment(R.layout.fragment_login) {
             findNavController().navigate(R.id.profileAuth)
         }
 
-
         button_login.setOnClickListener {
             findNavController().navigate(R.id.signIn)
         }

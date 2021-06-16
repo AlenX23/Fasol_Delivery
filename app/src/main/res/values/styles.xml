@@ -25,7 +25,7 @@
 
     <style name="ThemeOverlay.App.Snackbar" parent="">
         <item name="colorPrimary">@color/white</item>
-        <item name="colorOnSurface">@color/grey</item>
+        <item name="background">@drawable/basket_widget</item>
     </style>
 
     <style name="Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">

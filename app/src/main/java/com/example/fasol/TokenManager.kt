@@ -1,12 +1,9 @@
-import android.annotation.SuppressLint
 import android.content.Context
 
-@SuppressLint("StaticFieldLeak")
 object TokenManager {
 
     lateinit var context: Context
     var AccessToken = String()
-        @SuppressLint("StaticFieldLeak")
         get() {
             val tsLong = System.currentTimeMillis() / 1000
             val ts = tsLong.toString()
@@ -19,7 +16,6 @@ object TokenManager {
                 .getString("accesstoken", "")!!
 
         }
-        @SuppressLint("CommitPrefEdits")
         set(value) {
             field = value
             context.getSharedPreferences("CurrentUser", Context.MODE_PRIVATE)
@@ -27,7 +23,6 @@ object TokenManager {
         }
 
     var RefreshToken = String()
-        @SuppressLint("StaticFieldLeak")
         get() {
             val tsLong = System.currentTimeMillis() / 1000
             val ts = tsLong.toString()
@@ -40,7 +35,6 @@ object TokenManager {
                 .getString("refreshtoken", "")!!
 
         }
-        @SuppressLint("CommitPrefEdits")
         set(value) {
             field = value
             context.getSharedPreferences("CurrentUser", Context.MODE_PRIVATE)
@@ -48,7 +42,6 @@ object TokenManager {
         }
 
     private fun updateToken() {
-
     }
 
     private fun CheckTokenToValid(): Boolean {

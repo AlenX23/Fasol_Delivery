@@ -17,18 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/button_product_back"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp"
-            android:background="@color/white"
-            android:contentDescription="@string/back"
-            android:src="@drawable/chevron_left_24"
-
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <SearchView
             android:id="@+id/searchView"
             style="@style/Widget.AppCompat.Light.SearchView"
@@ -44,11 +32,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
 
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/wwidget"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
@@ -70,8 +59,10 @@
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wwidget"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
+        android:layout_margin="5dp"
         android:background="@drawable/basket_widget"
         android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,26 +74,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/basket"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-
-        <TextView
-            android:id="@+id/basket_widget_sum"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/sum"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.fasol.*
+import kotlinx.android.synthetic.main.fragment_info.*
+import kotlinx.android.synthetic.main.profile.*
 import kotlinx.serialization.ImplicitReflectionSerializer
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,6 +24,9 @@ class ProfileAuth : Fragment(R.layout.profile) {
     lateinit var phone: TextView
     lateinit var signOut: Button
     lateinit var updateToken: Button
+    lateinit var supportBtn: Button
+    lateinit var infoBtn: Button
+    lateinit var politBtn: Button
 
     @SuppressLint("SetTextI18n")
     @ImplicitReflectionSerializer
@@ -32,20 +37,37 @@ class ProfileAuth : Fragment(R.layout.profile) {
     ): View? {
         val v = inflater.inflate(R.layout.profile, container, false)
 
-
         name = v.findViewById(R.id.name)
         phone = v.findViewById(R.id.number)
         signOut = v.findViewById(R.id.signOut)
         updateToken = v.findViewById(R.id.updateToken)
+        supportBtn = v.findViewById(R.id.button_support)
+        infoBtn = v.findViewById(R.id.button_information)
+
 
         name.text =
             ProfileManager.getCurrentUser().firstName + " " + ProfileManager.getCurrentUser().lastName
         phone.text = ProfileManager.getCurrentUser().phone
 
         signOut.setOnClickListener {
-            ProfileManager.Clear()
+            ProfileManager.clear()
             findNavController().navigate(R.id.login)
         }
+
+        supportBtn.setOnClickListener {
+            val info = Info()
+            info.showNow(requireFragmentManager(), "Info")
+            info.InfoTitle.text = "Служба поддержки"
+            info.InfoDescription.text = "г. Ростов-на-Дону, ул. Казахстанский 19Б, тел.: +7 (988) 533-10-82"
+        }
+
+        infoBtn.setOnClickListener {
+            val info = Info()
+            info.showNow(requireFragmentManager(), "Info")
+            info.InfoTitle.text = "Информация"
+            info.InfoDescription.text = "Время доставки с 8:30 до 22:45. Стоимость доставки: 90 руб."
+        }
+
 
         updateToken.setOnClickListener {
             RetrofitClient.instance.updateAccessToken(RefreshModel(TokenManager.RefreshToken))

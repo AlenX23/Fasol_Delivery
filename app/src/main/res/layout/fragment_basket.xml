@@ -22,6 +22,7 @@
             android:layout_margin="16dp">
 
             <ImageButton
+                android:id="@+id/clear_basket_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -32,6 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
+                android:id="@+id/close_basket_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/small_button"
@@ -83,11 +85,11 @@
 
     <TextView
         android:id="@+id/totalPrice"
-        android:background="@color/white"
-        android:layout_margin="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sum"
+        android:layout_margin="15dp"
+        android:background="@color/white"
+        android:text="@string/basket_price"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -96,9 +98,9 @@
         android:id="@+id/orderBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/arrange"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/arrange"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

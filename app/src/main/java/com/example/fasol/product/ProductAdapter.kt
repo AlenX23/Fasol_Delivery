@@ -71,12 +71,12 @@ class ProductAdapter(
                                     it.context,
                                     "Что-то пошло не так! ${response.code()} ${response.body()}",
                                     Toast.LENGTH_SHORT
-                                )
+                                ).show()
                             }
                         }
 
                         override fun onFailure(call: Call<OneProduct>, t: Throwable) {
-                            Toast.makeText(it.context, "Что-то пошло не так!", Toast.LENGTH_SHORT)
+                            Toast.makeText(it.context, "Что-то пошло не так!", Toast.LENGTH_SHORT).show()
                         }
 
                     })
@@ -91,29 +91,28 @@ class ProductAdapter(
                         call: Call<AddToBasketModel>,
                         response: Response<AddToBasketModel>
                     ) {
-                        if(response.code() == 201)
-                        {
-                            info.dismiss()
-                            Toast.makeText(itemView.context, "Товар успешно добавлен!", Toast.LENGTH_LONG)
-                        }
-                        else if(response.code() == 200)
-                        {
-                            info.dismiss()
-                            Toast.makeText(itemView.context, "Продукт уже есть в корзине!", Toast.LENGTH_LONG)
-                        }
-                        else
-                            Toast.makeText(
+                        when {
+                            response.code() == 201 -> {
+                                info.dismiss()
+                                Toast.makeText(itemView.context, "Товар успешно добавлен!", Toast.LENGTH_LONG).show()
+                            }
+                            response.code() == 200 -> {
+                                info.dismiss()
+                                Toast.makeText(itemView.context, "Продукт уже есть в корзине!", Toast.LENGTH_LONG).show()
+                            }
+                            else -> Toast.makeText(
                                 itemView.context,
                                 "Что-то пошло не так! ${response.code()} ${response.body()}",
                                 Toast.LENGTH_SHORT
-                            )
+                            ).show()
+                        }
                     }
 
                     override fun onFailure(
                         call: Call<AddToBasketModel>,
                         t: Throwable
                     ) {
-                        Toast.makeText(itemView.context, "Что-то пошло не так!", Toast.LENGTH_SHORT)
+                        Toast.makeText(itemView.context, "Что-то пошло не так!", Toast.LENGTH_SHORT).show()
                     }
                 })
         }

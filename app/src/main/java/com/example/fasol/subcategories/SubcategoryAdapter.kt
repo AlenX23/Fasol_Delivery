@@ -13,13 +13,13 @@ import kotlinx.android.synthetic.main.subcategory_card.view.*
 class SubcategoryAdapter(private val list: ArrayList<SubcategoryModel>) :
     RecyclerView.Adapter<SubcategoryAdapter.SubcategoryViewHolder>() {
 
-    inner class SubcategoryViewHolder(
+    inner class SubcategoryViewHolder(//один элемент
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
         private var name = ""
         private var subcatId = 0
 
-        fun bind(subcategory: SubcategoryModel) {
+        fun bind(subcategory: SubcategoryModel) {//функция привязывает один элемннт в адаптере к xml
             with(itemView) {
                 name = subcategory.name
                 subcatId = subcategory.id
@@ -44,7 +44,7 @@ class SubcategoryAdapter(private val list: ArrayList<SubcategoryModel>) :
 
     override fun getItemCount(): Int = list.size
 
-    override fun onBindViewHolder(holder: SubcategoryAdapter.SubcategoryViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SubcategoryAdapter.SubcategoryViewHolder, position: Int) {//вызывает bind
         holder.bind(list[position])
     }
 }

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fasol.R
@@ -69,9 +68,6 @@ class SubcategoriesFragment : Fragment(R.layout.fragment_subcategories) {
         subcategoryView()
         super.onViewCreated(view, savedInstanceState)
 
-        button_subcategory_back.setOnClickListener {
-            findNavController().navigate(R.id.main)
-        }
     }
 
     private fun subcategoryView() {
